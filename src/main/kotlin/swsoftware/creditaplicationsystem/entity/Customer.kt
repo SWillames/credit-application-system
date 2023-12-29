@@ -1,6 +1,7 @@
 package swsoftware.creditaplicationsystem.entity
 
 import jakarta.persistence.*
+import java.math.BigDecimal
 
 @Entity
 data class Customer(
@@ -12,6 +13,8 @@ data class Customer(
 		val cpf: String,
 		@Column(nullable = false, unique = true)
 		var email: String = "",
+		@Column(nullable = false)
+		val income: BigDecimal = BigDecimal.ZERO,
 		@Column(nullable = false)
 		var password: String = "",
 		@Column(nullable = false)
